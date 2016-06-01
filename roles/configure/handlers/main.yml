@@ -1,0 +1,5 @@
+---
+
+- name: seil relaunch
+  shell: "{{ seil_path }}/seil relaunch"
+  changed_when: false

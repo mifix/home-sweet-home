@@ -1,0 +1,10 @@
+---
+
+- hosts: localhost
+  vars_files:
+    - "secrets.yml"
+  roles:
+    - { role: install, tags: install }
+    - configure
+    - osx-defaults
+
