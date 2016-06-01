@@ -42,7 +42,6 @@ Dock:
 
 
 
-dotfiles_repository: "git@gitlab.com:mifix/dotfiles.git"
 
 
 ssh_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtWWpApx4EzpEHhYlh6OVlR7fZgA12CgPUzEbDH3uVGHF0n0nYvvhY+olWe69eq7i2VBisr0ToJl8PKv+3o0MeyIN7AHyUduoNBXzap/7JZZerylHMLZt7oL9IIvDWri2RWegH9aoBvnZKn/LV60L6fT7U9MyHtknLjakRA+NCWz3C6WCwNAk3MnbO+7pCI99y9KzPWtnOnseg9O1CCksXdb/TV4PtaNv23v3+DJkkJPM73Y29bboOhHjXwR/wk9oeNi2d9+nuDnCr7v9ZPp/fTG8A84ahhk7djhZIQfKIY/MaFeIuHLVGFBGwZ92LSgKASGjVSR09v+IWCS8bYjx3 chris@Christian-Mayers-MacBook-Pro.local
