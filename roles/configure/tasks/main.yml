@@ -10,8 +10,12 @@
 - name: DOT | retrieve dotfiles
   git: repo={{ dotfiles_repository }} dest="{{ ansible_env.HOME }}/.dotfiles" accept_hostkey=true version=stow update=no
 
-- name: ZSH | set default shell
-  shell: "chsh -u {{ ansible_env.USER }} -s /bin/zsh"
+- name: ZSH | get path to zsh
+  shell: which zsh
+  register: zsh_path
+
+- name: configure user account
+  user: name={{ ansible_env.USER }} shell={{ zsh_path.stdout }} groups={{ user_groups }}
 
 
 - name: MacOSX

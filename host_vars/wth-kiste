@@ -1,0 +1,7 @@
+
+user_groups: "sudo,lxd"
+
+packages:
+  - tmux
+  - stow
+  - htop
