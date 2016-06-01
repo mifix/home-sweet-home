@@ -1,7 +1,5 @@
 ---
 
-
-
 - name: SSH | ensure ssh private key is present
   copy: content="{{ ssh_private_key}}" dest="{{ ansible_env.HOME }}/.ssh/id_rsa"
 
@@ -16,40 +14,6 @@
   shell: "chsh -u {{ ansible_env.USER }} -s /bin/zsh"
 
 
-
-# Disable CapsLock
-# http://apple.stackexchange.com/questions/13598/updating-modifier-key-mappings-through-defaults-command-tool
-#
-# Apparently not necessary when running Seil
-#
-# - name: Keyboard | determine keyboard VendorID
-#   shell: ioreg -n IOHIDKeyboard -r | awk '$2 == "\"VendorID\"" { print $4 }'
-#   register: keyboard_vendor_id
-#   changed_when: false
-#
-# - name: Keyboard | determine keyboard ProductID
-#   shell: ioreg -n IOHIDKeyboard -r | awk '$2 == "\"ProductID\"" { print $4 }'
-#   register: keyboard_product_id
-#   changed_when: false
-#
-# - debug: var=keyboard_vendor_id
-# - debug: var=keyboard_product_id
-#
-# - name: Keyboard | disable CapsLock modifier
-#   osx_defaults:
-
-
-- name: Keyboard | get Seil configuration
-  shell: "{{ seil_path }}/seil export"
-  register: keyboard_seil
-  changed_when: false
-
-- name: Keyboard | Seil enable CapsLock
-  shell: "{{ seil_path }}/seil set enable_capslock 1"
-  when: "'enable_capslock 1' not in keyboard_seil.stdout"
-  notify: seil relaunch
-
-- name: Keyboard | Seil set CapsLock to F10
-  shell: "{{ seil_path }}/seil set keycode_capslock 109"
-  when: "'keycode_capslock 109' not in keyboard_seil.stdout"
-  notify: seil relaunch
+- name: MacOSX
+  include: "os_x.yml"
+  when: ansible_distribution == "MacOSX"

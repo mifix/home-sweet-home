@@ -1,19 +1,9 @@
 ---
 
-- name: ensure homebrew taps are set
-  homebrew_tap: tap={{ item }} state=present
-  with_items: "{{ homebrew_taps }}"
 
-
-- name: ensure homebrew packages are present
-  homebrew: name={{ item }} state=present
-  with_items: "{{ homebrew_packages }}"
-
-
-- name: ensure homebrew casks are present
-  homebrew_cask: name={{ item }} state=present
-  with_items: "{{ homebrew_casks }}"
-
+- name: Homebrew
+  include: "homebrew.yml"
+  when: ansible_distribution == "MacOSX"
 
 
 - name: ZSH | get pretzo
