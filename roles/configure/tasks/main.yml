@@ -1,10 +1,10 @@
 ---
 
-- name: SSH | ensure ssh private key is present
-  copy: content="{{ ssh_private_key}}" dest="{{ ansible_env.HOME }}/.ssh/id_rsa"
+# - name: SSH | ensure ssh private key is present
+#   copy: content="{{ ssh_private_key}}" dest="{{ ansible_env.HOME }}/.ssh/id_rsa"
 
-- name: SSH | ensure ssh public key is present
-  copy: content="{{ ssh_public_key }}" dest="{{ ansible_env.HOME }}/.ssh/id_rsa.pub"
+# - name: SSH | ensure ssh public key is present
+#   copy: content="{{ ssh_public_key }}" dest="{{ ansible_env.HOME }}/.ssh/id_rsa.pub"
 
 
 - name: DOT | retrieve dotfiles

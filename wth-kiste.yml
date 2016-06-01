@@ -1,0 +1,8 @@
+---
+
+- hosts: wth-kiste
+  vars_files:
+    - "secrets.yml"
+  roles:
+    - { role: install, tags: install }
+    - configure
