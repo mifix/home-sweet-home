@@ -13,9 +13,11 @@
 - name: ZSH | get path to zsh
   shell: which zsh
   register: zsh_path
+  changed_when: false
 
 - name: configure user account
   user: name={{ ansible_env.USER }} shell={{ zsh_path.stdout }} groups={{ user_groups }}
+  become: true
 
 
 - name: MacOSX

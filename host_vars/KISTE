@@ -1,0 +1,8 @@
+
+user_groups: "sudo"
+
+packages:
+  - zsh
+  - tmux
+  - stow
+  - htop

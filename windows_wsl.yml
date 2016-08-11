@@ -1,0 +1,8 @@
+---
+
+- hosts: KISTE
+  #vars_files:
+    #- "secrets.yml"
+  roles:
+    - { role: install, tags: install }
+    - configure
