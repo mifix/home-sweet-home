@@ -8,6 +8,7 @@ homebrew_packages:
   - stow
   - htop
   - axel
+  - ssh-copy-id
   - mosh
   - git
   - git-extras
@@ -24,15 +25,20 @@ homebrew_taps:
 
 homebrew_casks:
   - openzfs
+  - arq
   - iterm2-beta
   - seil
   - tunnelblick
   - vivaldi
   - macdown
   - font-hack
+  - font-source-sans-pro
   - transmission
   - vlc
   - garmin-express
+  - flash
+  - sshfs
+  - gpgtools
 
 Bluetooth:
   ShowInMenuBar: True
