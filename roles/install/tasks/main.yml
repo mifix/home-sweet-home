@@ -7,7 +7,7 @@
 
 - name: ensure packages are present
   apt: name={{ item }} state=present
-  with_items: packages
+  with_items: "{{ packages }}"
   when: ansible_distribution == "Ubuntu"
   become: true
 
