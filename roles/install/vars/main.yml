@@ -1,2 +1,3 @@
 ---
-# vars file for install
+
+aur_package_build_dir: "/tmp/aur_builds/"

@@ -1,0 +1,19 @@
+
+user_groups: "sudo,lxd"
+
+packages:
+  - tmux
+  - stow
+  - htop
+  - neovim
+  - zsh
+  - borg
+  - jre8-openjdk-headless
+
+aur_packages:
+  - package-query
+  - yaourt
+  - aurtab
+  - albert
+  - google-chrome
+  
