@@ -21,13 +21,24 @@ if [ "$(uname)" == "Darwin" ]; then
 
 elif [ "$(uname)" == "Linux" ]; then
 
-	if [ "$(lsb_release -cs)" == "trusty" ]; then
+	if [ -f /usr/bin/lsb_release ] && [ "$(lsb_release -cs)" == "trusty" ]; then
 		echo " * Installing Ansible"
 		sudo add-apt-repository ppa:ansible/ansible
 		sudo apt-get update
 		sudo apt-get -y install ansible
 	fi
 
+	if [ -f /usr/bin/apt ]; then
+		install_cmd="sudo apt install -y"
+	elif [ -f /usr/bin/pacman ]; then
+		install_cmd="sudo pacman -Sy --noconfirm"
+	else
+		echo "Could not determine package manager."
+		exit -1
+	fi
+
+
+	# $install_cmd secret-tool
 
 fi
 
